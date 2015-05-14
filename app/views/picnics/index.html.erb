@@ -1,0 +1,24 @@
+<h1>Listing picnics</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @picnics.each do |picnic| %>
+      <tr>
+        <tr><%= picnic.name %></tr>
+        <td><%= link_to 'Show', picnic %></td>
+        <td><%= link_to 'Edit', edit_picnic_path(picnic) %></td>
+        <td><%= link_to 'Destroy', picnic, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Picnic', new_picnic_path %>

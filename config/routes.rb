@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   
+  resources :picnics
+
   devise_for :users
-  root 'application#hello'
+  root 'picnics#index'
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
