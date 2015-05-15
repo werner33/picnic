@@ -9,7 +9,9 @@ class PicnicsController < ApplicationController
   end
 
   def show
+    @picnic = Picnic.find(params[:id])
     respond_with(@picnic)
+    @invite = @picnic.invites.new
   end
 
   def new
@@ -42,6 +44,6 @@ class PicnicsController < ApplicationController
     end
 
     def picnic_params
-      params[:picnic]
+      params.require(:picnic).permit(:name, :description, :date, :time)
     end
 end

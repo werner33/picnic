@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   
-  resources :picnics
+  get 'invite/create'
 
+  resources :picnics
+  resources :invites
   devise_for :users
   root 'picnics#index'
   
