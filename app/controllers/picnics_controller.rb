@@ -1,5 +1,6 @@
 class PicnicsController < ApplicationController
   before_action :set_picnic, only: [:show, :edit, :update, :destroy]
+  before_filter :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
 
   respond_to :html
 
@@ -15,7 +16,7 @@ class PicnicsController < ApplicationController
   end
 
   def new
-    @picnic = Picnic.new
+    @picnic = current_user.hosted_picnics.new
     respond_with(@picnic)
   end
 
@@ -23,7 +24,7 @@ class PicnicsController < ApplicationController
   end
 
   def create
-    @picnic = Picnic.new(picnic_params)
+    @picnic = current_user.hosted_picnics.build(picnic_params)
     @picnic.save
     respond_with(@picnic)
   end
