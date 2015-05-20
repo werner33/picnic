@@ -25,6 +25,7 @@ class InvitesController < ApplicationController
     @invite = Invite.new(invite_params)
     @invite.save
     respond_with(@invite)
+    redirect_to picnics_path
   end
 
   def update

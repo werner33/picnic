@@ -4,6 +4,16 @@
 
   <h1><%= @picnic.name %></h1>
   <p><%= @picnic.description %></p>
+  <p>This Picnic is hosted by: <%= @picnic.host.email %></p>
+  
+  
+   <%= render 'shared/invite_form.html.erb' %>
+  
+  <h3>Guests: </h3>
+ 
+  <% @picnic.users.each do |u|  %>
+    <p><%= u.email %></p>
+  <% end %> 
   
   
 

@@ -11,8 +11,8 @@ class PicnicsController < ApplicationController
 
   def show
     @picnic = Picnic.find(params[:id])
-    respond_with(@picnic)
-    @invite = @picnic.invites.new
+    @invites = @picnic.invites
+    @invite = current_user.invites.build(picnic_id: @picnic.id)
   end
 
   def new
