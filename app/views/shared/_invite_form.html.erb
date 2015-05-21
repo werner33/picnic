@@ -1,0 +1,7 @@
+ <%= form_for @invite, :url => { :action => 'create', :controller => "invites"} do |f| %>
+ <div class="actions">
+  <%= f.hidden_field  :picnic_id %>
+  <%= f.hidden_field :user_id %>
+    <%= f.submit "RSVP" %>
+  </div>
+<% end %>
