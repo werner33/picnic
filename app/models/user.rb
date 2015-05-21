@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   
   has_many :hosted_picnics, :foreign_key => "host_id", :class_name => "Picnic"       
-  has_many :invites
+  has_many :invites, :foreign_key => "user_id", :class_name => "Invite"
   has_many :picnics, through: :invites
 end
 
