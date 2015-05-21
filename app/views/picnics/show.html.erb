@@ -6,9 +6,15 @@
   <p><%= @picnic.description %></p>
   <p>This Picnic is hosted by: <%= @picnic.host.email %></p>
   
+  <% if user_signed_in? && @picnic.users.include?(current_user) %>
+     <h2>Looking forward to seeing you!</h2>
+  <% elsif  user_signed_in? %>
+    <%= render 'shared/invite_form.html.erb' %>
+  <% else %>
   
-   <%= render 'shared/invite_form.html.erb' %>
+    <p> Log in to RSVP.</p>
   
+  <% end %>
   <h3>Guests: </h3>
  
   <% @picnic.users.each do |u|  %>
