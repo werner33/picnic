@@ -22,6 +22,7 @@
   <% end %> 
   
   
-
-<%= link_to 'Edit', edit_picnic_path(@picnic) %> |
-<%= link_to 'Back', picnics_path %>
+<% if current_user == @picnic.host %>
+  <%= link_to 'Edit', edit_picnic_path(@picnic) %> |
+<% end %>
+<%= link_to 'See All Picnics', picnics_path %>
