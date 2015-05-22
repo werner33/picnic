@@ -11,8 +11,9 @@ class PicnicsController < ApplicationController
 
   def show
     @picnic = Picnic.find(params[:id])
-    @invites = @picnic.invites
+    @invites = @picnic.invites.eager_load(:user)
     @invite = current_user.invites.build(picnic_id: @picnic.id) if user_signed_in?
+    @users = @picnic.users
   end
 
   def new

@@ -4,7 +4,7 @@
 
   <h1><%= @picnic.name %></h1>
   <p><%= @picnic.description %></p>
-  <p>This Picnic is hosted by: <%= @picnic.host.email %></p>
+  <p>This Picnic is hosted by: <%= @picnic.host.first_name %></p>
   
   <% if user_signed_in? && @picnic.users.include?(current_user) %>
      <h2>Looking forward to seeing you!</h2>
@@ -17,8 +17,10 @@
   <% end %>
   <h3>Guests: </h3>
  
+
+ 
   <% @picnic.users.each do |u|  %>
-    <p><%= u.email %></p>
+    <p><%= u.first_name %> is bringing <%= u.invites.find_by(picnic_id: @picnic.id).food %>.</p>
   <% end %> 
   
   
