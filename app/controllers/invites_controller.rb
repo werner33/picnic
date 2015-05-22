@@ -45,6 +45,6 @@ class InvitesController < ApplicationController
     end
 
     def invite_params
-      params.require(:invite).permit(:picnic_id, :user_id)
+      params.require(:invite).permit(:picnic_id, :user_id, :food)
     end
 end

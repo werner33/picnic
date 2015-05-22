@@ -1,5 +1,13 @@
+ <h2> RSVP </h2>
+ 
  <%= form_for @invite, :url => { :action => 'create', :controller => "invites"} do |f| %>
  <div class="actions">
+  <p>Yes I will be coming and I am bringing: </p>
+  <div class="field">
+    <%= f.label :food %><br />
+    <%= f.text_field :food, autofocus: true %>
+  </div>
+  
   <%= f.hidden_field  :picnic_id %>
   <%= f.hidden_field :user_id %>
     <%= f.submit "RSVP" %>

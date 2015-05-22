@@ -11,13 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150522142246) do
+ActiveRecord::Schema.define(version: 20150522145529) do
 
   create_table "invites", force: true do |t|
     t.integer  "user_id"
     t.integer  "picnic_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "food"
   end
 
   add_index "invites", ["picnic_id"], name: "index_invites_on_picnic_id"
