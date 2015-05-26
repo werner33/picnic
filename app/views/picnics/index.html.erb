@@ -1,4 +1,4 @@
-<h1>Listing picnics</h1>
+<h1>Upcoming Picnics:</h1>
 
 <table>
   <thead>
@@ -10,10 +10,10 @@
   <tbody>
     <% @picnics.each do |picnic| %>
       <tr>
-        <td><%= picnic.name %></td>
-        <td><%= link_to 'Show', picnic %></td>
-        <td><%= link_to 'Edit', edit_picnic_path(picnic) %></td>
-        <td><%= link_to 'Destroy', picnic, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><p><%= picnic.name %></p></td>
+        <td><%= link_to 'See Details', picnic %></td>
+        <!--<td><%= link_to 'Edit', edit_picnic_path(picnic) %></td>-->
+        <!--<td><%= link_to 'Destroy', picnic, method: :delete, data: { confirm: 'Are you sure?' } %></td>-->
       </tr>
     <% end %>
   </tbody>
