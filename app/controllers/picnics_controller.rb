@@ -26,9 +26,22 @@ class PicnicsController < ApplicationController
 
   def create
     @picnic = current_user.hosted_picnics.build(picnic_params)
-    @picnic.save
-    respond_with(@picnic)
+    if @picnic.save
+      redirect_to @picnic
+    else
+      format.html { render :new }
+    end 
   end
+
+  #   def create
+  #   @chakra = Chakra.new(chakra_params)
+  #   if @chakra.save 
+  #     redirect_to @chakra
+  #   else 
+  #     format.html { render :new }
+  #   end 
+  # end
+
 
   def update
     @picnic.update(picnic_params)
@@ -46,6 +59,6 @@ class PicnicsController < ApplicationController
     end
 
     def picnic_params
-      params.require(:picnic).permit(:name, :description, :date, :time)
+      params.require(:picnic).permit(:name, :description, :date, :time, :image)
     end
 end

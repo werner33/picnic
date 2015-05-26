@@ -1,4 +1,5 @@
-<%= form_for(@picnic) do |f| %>
+
+<%= form_for @picnic, :html => {:multipart => true} do |f| %>
   <% if @picnic.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@picnic.errors.count, "error") %> prohibited this picnic from being saved:</h2>
@@ -19,6 +20,9 @@
   
   <%= f.label :description %></br>
   <%= f.text_field :description %></br>
+
+  <%= f.label :image %></br>
+  <%= f.file_field :image %></br>
 
   <div class="actions">
     <%= f.submit %>

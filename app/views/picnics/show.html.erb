@@ -3,7 +3,11 @@
 
 
   <h1><%= @picnic.name %></h1>
+  <%= image_tag (@picnic.image), height: '200' %>
+  <br>
+  <br>
   <p><%= @picnic.description %></p>
+  <br>
   <p>This Picnic is hosted by: <%= @picnic.host.first_name %></p>
   
   <% if user_signed_in? && @picnic.users.include?(current_user) %>
@@ -15,6 +19,11 @@
     <p> Log in to RSVP.</p>
   
   <% end %>
+  
+  
+  
+ 
+  
   <h3>Guests: </h3>
  
 
