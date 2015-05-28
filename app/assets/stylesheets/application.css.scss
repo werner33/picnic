@@ -45,7 +45,7 @@ p{
     color: white;
 }
 
-h1, h2, h3, h4, h5, strong, a, a:visited {
+h1, h2, h3, h4, h5, strong, a, a:visited, small {
     font-family: 'Fjalla One';
     color: white;
 }
@@ -57,3 +57,74 @@ h1, h2, h3, h4, h5, strong, a, a:visited {
     border: none;
 }
 
+
+/* footer */
+
+footer {
+  margin-top: 45px;
+  padding-top: 5px;
+}
+
+footer .columns {
+    background: #D8D8D8;
+    h3, p {
+        color: #000099;
+    }
+    a {
+        font-family: 'Shadows Into Light';
+        font-size: 20px;
+        position: relative;
+        bottom: -10px;
+    }
+    
+}
+
+footer .links {
+    background: black;
+    padding-top: 25px;
+    padding-bottom: 20px;
+}
+
+footer a:hover {
+  color: #222;
+}
+
+footer small {
+  float: left;
+  padding-left: 100px;
+  
+}
+
+footer ul {
+  float: right;
+  list-style: none;
+  padding-right: 80px;
+}
+
+footer ul li {
+  float: left;
+  margin-left: -15px;
+  padding-right: 50px;
+}
+
+
+
+// footer ul {
+//     padding-top: 15px;
+// }
+
+// footer ul li {
+//     display: inline;
+//     padding: 40px;
+// }
+
+// #footer_links {
+//     background: black;
+// }
+
+// footer small {
+//     position: relative;
+//     right: 40px;
+    
+//     color: white;
+// }

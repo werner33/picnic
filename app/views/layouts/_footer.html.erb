@@ -1,0 +1,56 @@
+
+<footer class="footer">
+    <div class="columns">
+        <div class="container">
+        
+        <div class="row">
+            <div class="col-md-4">
+                <h3>Subscribe</h3>
+                <p>Every Sunday throughout the summer, we host an informal picnic
+                that anyone can attend. Whether you want to spend more time outside,
+                make friends or eat good food, you should join us!</p>
+                <form>
+                    <p>Subscribe</p>
+                    
+                </form>
+            </div>
+            <div class="col-md-4">
+                <h3>Sign Up</h3>
+                <p>By signing up you can see all upcoming picnics and RSVP. Tell
+                us what you are bringing and see what other people want to share
+                with you.</p> 
+                <%= link_to "Sign up here.", new_user_registration_path %>
+                
+            </div>
+            <div class="col-md-4">
+                <h3>Looking for a web developer?</h3>
+                <p>Looking to put your idea into practice or revamp an existing
+                web application? I can help. Feel free to contact me with your 
+                idea.</p>
+                <a href="#">Contact me</a>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="links">
+        <div class="row">
+         <small>
+            Site design by Jordan Manley.
+        </small>
+        <div id="nav">
+            <ul>
+                <li>
+                    <%= link_to 'Home', root_path %>
+                </li>
+                <li>
+                    <%= link_to 'Contact', '#' %>
+                </li>
+                <li>
+                    <%= link_to 'About Us', '#' %>
+                </li>
+            </ul>
+           
+        </div>
+    </div>
+    </div>
+</footer>
