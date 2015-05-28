@@ -21,10 +21,12 @@
 body {
    background-image: url("http://www.lostpicnic.net/wp-content/uploads/2014/01/131221-LOST-PICNIC-1261.jpg");
    background-size: 100%;
+   background-attachment: fixed;
 }
 
 .navbar {
-    margin-top: 30px;
+    margin-top: 0px;
+    border-radius: 0px;
 }
 
 .opaque {
@@ -43,7 +45,7 @@ p{
     color: white;
 }
 
-h1, h2, h3, h4, h5, strong {
+h1, h2, h3, h4, h5, strong, a, a:visited {
     font-family: 'Fjalla One';
     color: white;
 }
@@ -54,3 +56,4 @@ h1, h2, h3, h4, h5, strong {
     color: black;
     border: none;
 }
+

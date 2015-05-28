@@ -9,3 +9,5 @@ CarrierWave.configure do |config|
   config.fog_directory  = 'picnicly'                          # required
 
 end
+
+

@@ -11,4 +11,7 @@ class Picnic < ActiveRecord::Base
   accepts_nested_attributes_for :invites
   
 
+  def show_date
+    self.date.to_s
+  end 
 end
