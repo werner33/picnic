@@ -2,26 +2,32 @@
 <html>
 <head>
   <title>Picnicly.nyc</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
   <link href='https://fonts.googleapis.com/css?family=Shadows+Into+Light' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Arvo' rel='stylesheet' type='text/css'>
 </head>
 <body>
 
 
 
-  <%= render 'layouts/navbar' %>
-<div class="container">
+ 
+   <%= render 'layouts/navbar' %>
+
+<!--<div class="container">-->
 <div class="opaque">
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
+  <!--<p class="notice"><%= notice %></p>-->
+  <!--<p class="alert"><%= alert %></p>-->
 
   <%= yield %>
 </div>
 
-</div>
+<!--</div>-->
   <%= render 'layouts/footer' %>
 </body>
 </html>

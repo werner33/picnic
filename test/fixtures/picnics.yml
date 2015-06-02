@@ -4,7 +4,19 @@
 # model remove the '{}' from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
 #
-one: {}
+
+# lo & behold! I am a YAML comment!
+# david:
+#   name: David Heinemeier Hansson
+#   birthday: 1979-10-15
+#   profession: Systems development
+one: 
+  name: First Picnic
+  date: 2015-10-10
+  description: This is a test picnic.
+  host_id: one
+
+
 # column: value
 #
 two: {}

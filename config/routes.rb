@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   resources :picnics
   resources :invites
   devise_for :users,  :controllers => { registrations: 'registrations' }
+  resources :subscriptions
+  post 'subscriptions/subscribe' => 'subscriptions#subscribe'
   root 'picnics#index'
   
   # The priority is based upon order of creation: first created -> highest priority.

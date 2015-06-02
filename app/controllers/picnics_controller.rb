@@ -7,6 +7,7 @@ class PicnicsController < ApplicationController
   def index
     @picnics = Picnic.all
     respond_with(@picnics)
+    
   end
 
   def show
