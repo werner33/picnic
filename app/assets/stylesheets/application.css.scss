@@ -65,12 +65,7 @@ Media Query Reporter Styles
 
 
 body {
-//   background-image: url("http://www.lostpicnic.net/wp-content/uploads/2014/01/131221-LOST-PICNIC-1261.jpg");
-//   background-size: 100%;
-//   background-color: blue;
-//   background-attachment: fixed;
-//   background-position: fixed;
-    //  overflow-x: hidden;
+
 }
 
 	
@@ -93,6 +88,13 @@ body {
     height: 100%;
 
  }
+ 
+ .jumbotron p, h1 {
+     position: relative;
+     margin-left: 15%;
+ }
+ 
+ 
 
 
 
@@ -108,10 +110,10 @@ img {
     padding: 0px;
 }
 
-.opaque {
-    background-color: rgba(100, 100, 100, .5);
-    // padding: 20px 20px 20px 20px;
-}
+// .opaque {
+//     background-color: rgba(100, 100, 100, .5);
+//     // padding: 20px 20px 20px 20px;
+// }
 
 
 
@@ -123,12 +125,12 @@ h3{
 p{
     font-family: 'Arvo';
     font-size: 20px;
-    color: white;
+    // color: white;
 }
 
 h1, h2, h3, h4, h5, strong, a, a:visited, small {
     font-family: 'Fjalla One';
-    color: white;
+    // color: white;
 }
 
 
@@ -141,52 +143,134 @@ h1, h2, h3, h4, h5, strong, a, a:visited, small {
 
 /* footer */
 
-footer {
-  margin-top: 45px;
-  padding-top: 5px;
-}
+// footer {
+//   margin-top: 45px;
+//   padding-top: 5px;
+// }
 
-footer .columns {
-    background: #D8D8D8;
-    h3, p {
-        color: #000099;
-    }
-    a {
-        font-family: 'Shadows Into Light';
-        font-size: 20px;
-        position: relative;
-        bottom: -10px;
-    }
+// footer .columns {
+//     background: #D8D8D8;
+//     h3, p {
+//         color: #000099;
+//     }
+//     a {
+//         font-family: 'Shadows Into Light';
+//         font-size: 20px;
+//         position: relative;
+//         bottom: -10px;
+//     }
     
+// }
+
+// footer .links {
+//     background: black;
+//     padding-top: 25px;
+//     padding-bottom: 20px;
+// }
+
+
+
+
+
+
+footer {
+    width: 100%;
+    background-color: #F0F0F0;
+    border-top: 1px solid #7bbd30;
+    padding-bottom: 5em;
+    padding-top: 5em;
 }
 
-footer .links {
-    background: black;
-    padding-top: 25px;
-    padding-bottom: 20px;
+.first-col-footer, .second-col-footer {
+    padding-bottom: 40px;
+}
+
+.first-col-footer-title {
+    padding-bottom: 10px;
 }
 
 footer a:hover {
-  color: #222;
+  color: #7bbd30;
+  text-decoration: none;
+  background: none;
 }
 
-footer small {
-  float: left;
-  padding-left: 100px;
-  
+footer h4 {
+    font-size: 1.4em;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+
+
+.footer-link {
+    color: #7bbd30;
+    font-size: 1em;
+    text-decoration: none;
+    padding-bottom: 10px;
+
+}
+
+footer h4 a {
+  color: #603813;
 }
 
 footer ul {
-  float: right;
   list-style: none;
-  padding-right: 80px;
+  margin-top: 1em;
+  padding-left: 0;
+  
 }
 
 footer ul li {
-  float: left;
-  margin-left: -15px;
-  padding-right: 50px;
+    display: inline-block;
+}
+
+.social_icon {
+    size: 40px;
+}
+
+footer {
+    .pitch {
+        font-size: 1.3em;
+        margin-bottom: 40px;
+    }
+    .photo-link {
+        color: #ed342a;
+        text-decoration: none;
+        font-size: .9em;
+    }
 }
 
 
+/* Subscribe form */
 
+
+
+.subscribe-field {
+  height: 2.8em;
+  width: 15em;
+  padding: 5px;
+  border-color: #7bbd30;
+  border-width: 1px;
+  margin-bottom: 1em;
+  font-family: Arvo;
+  font-size: 1.2em;
+}
+
+.subscribe-button {
+    color: white;
+    font-family: 'Josefin Sans', sans-serif !important;
+    padding: 10px 8px 10px 8px;
+    font-weight: 600px;
+    font-size: 1.35em;
+    background-color: #ed342a;
+    border: none;
+    text-transform: uppercase;
+}
+
+.subscription-form {
+    padding-bottom: 40px;
+}

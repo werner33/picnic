@@ -1,6 +1,6 @@
 
 
 <%= form_for Subscription.new do |f| %>
-   <%= f.text_field :email %>
-   <%= f.submit "Subscribe" %>
+   <%= f.text_field :email, :placeholder => "enter email", class: "subscribe-field"%>
+   <%= f.submit "Go", class: "subscribe-button" %>
 <% end %>
