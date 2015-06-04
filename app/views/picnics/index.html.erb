@@ -1,38 +1,50 @@
-
-<!--<div class="jumbotron">-->
-<!--  <h1>Hello, world!</h1>-->
-<!--  <p>...</p>-->
-<!--  <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>-->
-<!--</div>-->
+<div class="stretchimage">
+  <img src="http://www.ststephensepiscopal-nc.org/wp-content/uploads/2014/07/PicnicFood.jpg" 
+  class="header_img img-responsive"></img>
+</div>
 
 
 
 <div class="container">
-  
 
-<h1>Upcoming Picnics:</h1>
-
-
-<% @picnics.in_groups_of(2) do |group| %>
-  <div class="row">
-    <% group.each do |picnic| %>
-    <div class="col-md-6" >
-      <h2><%= link_to picnic.name, picnic %></h2>
-      <%= image_tag picnic.image, height: 300  %>
-      <p><%= picnic.show_date %></p>
-      <p><%= truncate(picnic.description, length: 160) %></p>
+<h1 class="next_picnic">Let's Have A Picnic</h1>
+<hr class="h_rule">  
+<div class="row">
+  <div class="col-sm-8 col-sm-offset-2 center">
+    <p class="about_description">When the weather is good in New York City, there is nothing I like to 
+    do more than have a picnic. The best part about a picnic is you never run 
+    out of room; everyone is welcome!I created this site to make sure that anyone
+    who is interested can see when the next picnic is and what everyone is 
+    bringing.</p>
     </div>
-    
-    <% end %>
   </div>
-  <br>
-<% end %>
-
-
-
-
-<br>
-
-<%= link_to 'New Picnic', new_picnic_path %>
-
+  <div class="row three_cols">
+    <h1 class="next_picnic">Picnics and more...</h1>
+    <hr class="h_rule"> 
+    <div class="col-sm-4">
+      <h3>Next Picnic: <%=link_to @picnic.name, picnic_path(@picnic)%></h3>
+      <%= image_tag @picnic.image, width: '10' %>  
+      <p><%= simple_format(truncate(@picnic.description, length: 150)) %></p>
+    </div>
+    <div class="col-sm-4">
+      <h3><a href="/photos">Photos</a></a></h3>
+      <%= image_tag @picnic.image, width: '10' %>  
+      <p>Check out these photos from past picnics. Attended a picnic? Share 
+      your photos with everyone by uploading them.</p>
+    </div>
+    <div class="col-sm-4">
+      <h3><a href="/">Calendar</a></h3>
+      <%= image_tag @picnic.image, width: '10' %>  
+      <p>If you can't make the next picnic, check out this calendar of when
+      and where the next few picnics will be taking place. Its a great way to
+      get outside, make friends and eat good food.</p>
+    </div>
+  </div>
+      <hr class="h_rule"> 
+      <div class="row">
+        <div class="col-sm-4 col-sm-offset-4 center">
+           <button onclick="/" type="button" href="/product" 
+           class="btn perfect-red-button">RSVP to Next Picnic</button>
+        </div>
+      </div>
 </div>
