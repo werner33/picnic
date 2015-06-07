@@ -17,7 +17,7 @@
     <h1 class="next_picnic">Picnics and more...</h1>
     <hr class="h_rule"> 
     <div class="col-sm-4">
-      <h3><%=link_to "Next Picnic", picnic_path(@picnic)%></h3>
+      <h3><%=link_to "Next Picnic", picnic_path(@picnic.id)%></h3>
       <%= image_tag 'girls_picnics.jpg', width: '10' %>  
       <p><%= simple_format(truncate(@picnic.description, length: 150)) %></p>
     </div>
