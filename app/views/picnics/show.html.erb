@@ -1,40 +1,52 @@
-<p id="notice"><%= notice %></p>
+ <div class="picnic">
+   <div class="picnic_img">
+     <%= image_tag "picnic.jpg", class: "stretchimage" %>
+   </div>
 
-
-
-  <h1><%= @picnic.name %></h1>
-  <%= image_tag (@picnic.image), height: '400' %>
-  <br>
-  <p><%= @picnic.date %></p>
-  <br>
-  <p><%= @picnic.description %></p>
-  <br>
-  <p>This Picnic is hosted by: <%= @picnic.host.first_name %></p>
-  
-  <% if user_signed_in? && @picnic.users.include?(current_user) %>
-     <h2>Looking forward to seeing you!</h2>
-  <% elsif  user_signed_in? %>
-    <%= render 'shared/invite_form.html.erb' %>
-  <% else %>
-  
-    <p> Log in to RSVP.</p>
-  
-  <% end %>
-  
-  
-  
+<div class="container">
  
+    <p id="notice"><%= notice %></p>
+    <div class="row">
+      <div class="col-sm-6 col-sm-offset-3">
+       <h1><%= @picnic.name %></h1>
+       <hr class="h_rule">
+       <h3 class="center date"><%= (@picnic.date.strftime("%A, %B %d, %Y at %l:%M %p")) %></h3>
+       <p><%= simple_format @picnic.description, class: "description" %></p>
+       <p class="host">This Picnic is hosted by: <strong><%= @picnic.host.first_name %></strong></p>
+      </div>
+    </div>
   
-  <h3>Guests: </h3>
- 
+    <div class="row">
+      <div class="col-sm-6 col-sm-offset-3">
+         <% if user_signed_in? && @picnic.users.include?(current_user) %>
+           <h3>Thanks for your RSVP. Looking forward to seeing you!</h3>
+        <% elsif user_signed_in? %>
+          <%= render 'shared/invite_form.html.erb' %>
+        <% else %>
+          <p> <%= link_to "Log in", new_user_session_path %> to RSVP.</p>
+        <% end %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-6 col-sm-offset-3">
+        <div class="rsvp">
+          <h3>Guests: </h3>
+   
+          <% @picnic.users.each do |u|  %>
+            <p><%= u.first_name %> is bringing <%= u.invites.find_by(picnic_id: @picnic.id).food %>.</p>
+          <% end %> 
+        </div>
+          <% if current_user == @picnic.host %>
+            <%= link_to 'Edit Picnic Info', edit_picnic_path(@picnic) %> 
+          <% end %>
+          <!--<%= link_to 'See All Picnics', picnics_path %>-->
+      </div>
+    </div>
+  </div>
+</div>
 
- 
-  <% @picnic.users.each do |u|  %>
-    <p><%= u.first_name %> is bringing <%= u.invites.find_by(picnic_id: @picnic.id).food %>.</p>
-  <% end %> 
+
+
+
   
   
-<% if current_user == @picnic.host %>
-  <%= link_to 'Edit', edit_picnic_path(@picnic) %> |
-<% end %>
-<%= link_to 'See All Picnics', picnics_path %>

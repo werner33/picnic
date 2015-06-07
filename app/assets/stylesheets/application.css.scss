@@ -71,6 +71,7 @@ body {
 p {
     font-family: 'Arvo', serif;    
     font-size: 20px;
+    line-height: 1.2em;
 
 }
 
@@ -79,7 +80,6 @@ p {
 
 .stretchimage { 
     width: 100%; 
-    height: 250px; 
     overflow: hidden;
 }
 
@@ -137,6 +137,8 @@ p {
     img {
         padding-top: 10px;
         padding-bottom: 15px;
+        width: 100%;
+        height: 100%;
     }
     a {
         color: #7BBD30;
@@ -224,10 +226,7 @@ p {
 
 
 
-img {
-    width: 100%;
-    height: 100%;
-}
+
 
 .navbar {
     margin-top: 0px;
@@ -374,4 +373,29 @@ footer {
   margin-bottom: 1em;
   font-family: Arvo;
   font-size: 1.2em;
+}
+
+
+/* Picinic Page */
+
+.picnic {
+    
+    h1 {
+        padding: 20px 0px 0px 0px;
+        font-weight: 600;
+        font-size: 2em;
+        text-align: center;
+    }
+    .date {
+        padding-bottom: 30px;
+    }
+    .description {
+        padding-bottom: 30px;
+    }
+    .host {
+        padding-bottom: 30px;
+    }
+    .rsvp {
+        padding-bottom: 30px;
+    }
 }

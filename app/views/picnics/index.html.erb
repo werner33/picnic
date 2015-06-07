@@ -22,7 +22,7 @@
     <h1 class="next_picnic">Picnics and more...</h1>
     <hr class="h_rule"> 
     <div class="col-sm-4">
-      <h3>Next Picnic: <%=link_to @picnic.name, picnic_path(@picnic)%></h3>
+      <h3><%=link_to "Next Picnic", picnic_path(@picnic)%></h3>
       <%= image_tag @picnic.image, width: '10' %>  
       <p><%= simple_format(truncate(@picnic.description, length: 150)) %></p>
     </div>
@@ -43,6 +43,7 @@
   <hr class="h_rule"> 
   <div class="row">
     <div class="col-sm-4 col-sm-offset-4 center">
+      <h2>The next picnic is in <%= distance_of_time_in_words_to_now(@picnic.date) %>.</h2>
        <button onclick="/" type="button" href="/product" 
        class="btn perfect-red-button">RSVP</button>
     </div>
