@@ -17,12 +17,10 @@
     <h1 class="next_picnic">Picnics and more...</h1>
     <hr class="h_rule"> 
     <div class="col-sm-4">
-      <% if @picnic? %>
       <h3><%=link_to "Next Picnic", picnic_path(@picnic) %></h3>
       
       <%= image_tag 'girls_picnics.jpg', width: '10' %>  
       <p><%= simple_format(truncate(@picnic.description, length: 150)) %></p>
-      <% end %>
     </div>
  
     <div class="col-sm-4">
@@ -42,11 +40,8 @@
   <hr class="h_rule"> 
   <div class="row">
     <div class="col-sm-4 col-sm-offset-4 center">
-     <% if @picnic? %>
      <h2>The next picnic is in <%= distance_of_time_in_words_to_now(@picnic.date) %>.</h2>
-        
         <%= link_to "RSVP", picnic_path(@picnic), class: "btn perfect-red-button" %>
-        <% end %>
     </div>
   </div>
 </div>
