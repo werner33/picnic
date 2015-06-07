@@ -1,7 +1,5 @@
-<div class="stretchimage">
-  <img src="http://www.ststephensepiscopal-nc.org/wp-content/uploads/2014/07/PicnicFood.jpg" 
-  class="header_img img-responsive"></img>
-</div>
+<%= image_tag "picnic_food.jpg", class: "stretchimage" %>
+
 
 
 
@@ -13,7 +11,7 @@
   <div class="col-sm-8 col-sm-offset-2 center">
     <p class="about_description">When the weather is good in New York City, there is nothing I like to 
     do more than have a picnic. The best part about a picnic is you never run 
-    out of room; everyone is welcome!I created this site to make sure that anyone
+    out of room; everyone is welcome! I created this site to make sure that anyone
     who is interested can see when the next picnic is and what everyone is 
     bringing.</p>
     </div>
@@ -23,18 +21,18 @@
     <hr class="h_rule"> 
     <div class="col-sm-4">
       <h3><%=link_to "Next Picnic", picnic_path(@picnic)%></h3>
-      <%= image_tag @picnic.image, width: '10' %>  
+      <%= image_tag 'girls_picnics.jpg', width: '10' %>  
       <p><%= simple_format(truncate(@picnic.description, length: 150)) %></p>
     </div>
     <div class="col-sm-4">
       <h3><a href="/photos">Photos</a></a></h3>
-      <%= image_tag @picnic.image, width: '10' %>  
+      <%= image_tag "picnic_guitar.jpg", width: '10' %>  
       <p>Check out these photos from past picnics. Attended a picnic? Share 
       your photos with everyone by uploading them.</p>
     </div>
     <div class="col-sm-4">
       <h3><a href="/">Calendar</a></h3>
-      <%= image_tag @picnic.image, width: '10' %>  
+      <%= image_tag "picnic_portrait.jpg", width: '10' %>  
       <p>If you can't make the next picnic, check out this calendar of when
       and where the next few picnics will be taking place. Its a great way to
       get outside, make friends and eat good food.</p>
@@ -44,8 +42,7 @@
   <div class="row">
     <div class="col-sm-4 col-sm-offset-4 center">
       <h2>The next picnic is in <%= distance_of_time_in_words_to_now(@picnic.date) %>.</h2>
-       <button onclick="/" type="button" href="/product" 
-       class="btn perfect-red-button">RSVP</button>
+        <%= link_to "RSVP", picnic_path(@picnic), class: "btn perfect-red-button" %>
     </div>
   </div>
 </div>

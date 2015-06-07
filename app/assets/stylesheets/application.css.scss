@@ -81,6 +81,7 @@ p {
 .stretchimage { 
     width: 100%; 
     overflow: hidden;
+    padding-bottom: 40px;
 }
 
 
@@ -172,8 +173,6 @@ p {
   -webkit-transition-property: color, background-color !important;
   transition-property: color, background-color !important;
   margin-bottom: 25px;
-
-  
 }
 
 
@@ -222,21 +221,11 @@ p {
   margin-right: 0px;
 }
 
-
-
-
-
-
-
 .navbar {
     margin-top: 0px;
     border-radius: 0px;
     padding: 0px;
 }
-
-
-
-
 
 h1, h2, h3, h4, h5, strong, a, a:visited, small {
     font-family: 'Fjalla One';
@@ -358,11 +347,8 @@ footer {
 /* devise */
 
 .devise {
-    
     padding-bottom: 40px;        
-    
 }
-
 
 .form-field {
   height: 2.8em;
@@ -379,7 +365,9 @@ footer {
 /* Picinic Page */
 
 .picnic {
-    
+    img {
+        width: 100%;
+    }
     h1 {
         padding: 20px 0px 0px 0px;
         font-weight: 600;
