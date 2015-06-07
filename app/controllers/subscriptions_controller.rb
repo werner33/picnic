@@ -9,7 +9,8 @@ def create
         flash[:notice] = "Thank you! We'll email you about the next picnic."
         redirect_to root_path
     else
-       format.html { render :new }
+       flash[:alert] = "Email address is not valid. Please enter a valid email."
+       redirect_to root_path
     end
 end 
 
