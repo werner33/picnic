@@ -21,13 +21,21 @@
       
       <%= image_tag 'girls_picnics.jpg', width: '10' %>  
       <p><%= simple_format(truncate(@picnic.description, length: 150)) %></p>
+      <div class="center">
+      <%= link_to "RSVP", picnic_path(@picnic), class: "btn perfect-red-button col-btn" %>
+      </div>
     </div>
  
     <div class="col-sm-4">
       <h3><a href="/photos">Photos</a></a></h3>
       <%= image_tag "picnic_guitar.jpg", width: '10' %>  
-      <p>Check out these photos from past picnics. Attended a picnic? Share 
+      <p>Check out these photos from past picnics.</p>
+        
+      <p> Attended a picnic? Share 
       your photos with everyone by uploading them.</p>
+      <div class="center">
+        <%= link_to "See Photos", picnic_path(@picnic), class: "col-btn col-btn-2 btn perfect-red-button" %>
+      </div>
     </div>
     <div class="col-sm-4">
       <h3><a href="/">Calendar</a></h3>
@@ -35,6 +43,9 @@
       <p>If you can't make the next picnic, check out this calendar of when
       and where the next few picnics will be taking place. Its a great way to
       get outside, make friends and eat good food.</p>
+      <div class="center">
+        <%= link_to "See Calendar", picnic_path(@picnic), class: "btn perfect-red-button col-btn" %>
+      </div>
     </div>
   </div>
   <hr class="h_rule"> 
