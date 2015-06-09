@@ -364,6 +364,20 @@ footer {
 }
 
 
+/* login */
+
+.fb-login {
+    font-size: 1.6em;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    a {
+      color: #3B5998;  
+    }
+    a:hover {
+        background: none;
+    }
+}
+
 /* Picinic Page */
 
 .picnic {
