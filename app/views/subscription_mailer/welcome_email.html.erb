@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Welcome to ThePicnic.nyc!</h1>
+    
+    <p>
+      The next picnic is in <%= distance_of_time_in_words_to_now(@picnic.date) %> 
+      on  <%= @picnic.date.strftime("%A, %B %d at %l:%M %p") %>. Please join us!    
+      To login and RSVP, just follow this link: <%= @url %>.
+    </p>
+    <p>We look forward to seeing you!</p>
+  </body>
+</html>
