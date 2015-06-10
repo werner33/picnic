@@ -6,9 +6,8 @@ class PicnicsController < ApplicationController
 
   def index
     @picnics = Picnic.all
-    @picnic = @picnics.last
+    @picnic = Picnic.where('date >= ?', Date.today).order(:date).last
     respond_with(@picnics)
-    
   end
 
   def show
@@ -34,16 +33,6 @@ class PicnicsController < ApplicationController
       format.html { render :new }
     end 
   end
-
-  #   def create
-  #   @chakra = Chakra.new(chakra_params)
-  #   if @chakra.save 
-  #     redirect_to @chakra
-  #   else 
-  #     format.html { render :new }
-  #   end 
-  # end
-
 
   def update
     @picnic.update(picnic_params)
