@@ -5,7 +5,7 @@ class SubscriptionMailer < ActionMailer::Base
     @subscription = subscriber
     @picnic = Picnic.last
     @url  = "https://quiet-chamber-2613.herokuapp.com/picnics/#{@picnic.id}"
-    mail(to: @subscription.email, subject: 'Come to a Picnic')
+    mail(to: @subscription.email, subject: 'Come to a Picnic!')
   end
   
 end
