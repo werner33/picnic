@@ -5,13 +5,20 @@ class Picnic < ActiveRecord::Base
   belongs_to :host, :class_name => "User"
   has_many :invites, dependent: :destroy
   has_many :users, through: :invites
-  
+  before_validation :set_just_date
   
   
   accepts_nested_attributes_for :invites
   
 
-  def show_date
-    self.date.to_s
-  end 
+  # def show_date
+  #   self.date.to_s
+  # end 
+
+  private
+
+    def set_just_date
+      self.just_date = self.date.to_date
+    end
+  
 end

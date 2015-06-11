@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   post 'subscriptions/subscribe' => 'subscriptions#subscribe'
   root 'picnics#index'
   
+  get '/calendar' => 'calendar#calendar'
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

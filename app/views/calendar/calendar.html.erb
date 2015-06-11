@@ -1,0 +1,24 @@
+    <div class="container">
+      <div class="col-sm-6 col-sm-offset-2">    
+      <div id="calendar">
+ 
+          <h2 id="month">
+            <%= link_to "<", date: @date.prev_month %>
+            <%= @date.strftime("%B %Y") %>
+            <%= link_to ">", date: @date.next_month %>
+          </h2>
+          <%= calendar @date do |date| %>
+            <%= date.day %>
+            <p>photography</p>
+            <% if @picnics_by_date[date] %>
+              <ul>
+                <% @picnics_by_date[date].each do |picnic| %>
+                  <li><%= link_to picnic.name, picnic %></li>
+                <% end %>
+              </ul>
+            <% end %>
+           <% end %>
+        </div>  
+    </div>  
+</div>      
+      

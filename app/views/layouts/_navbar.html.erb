@@ -22,7 +22,7 @@
                 <ul class="nav">
                     <li class="active"><a href="/">Home</a></li>
                     <li><a href="/">Picnics</a></li>
-                    <li><a href="/">Calendar</a></li>
+                    <li><a href="/calendar">Calendar</a></li>
                     <% if user_signed_in? %>
                     <li><%= link_to 'Log out', destroy_user_session_path, method: :delete %></li>
                     <% else %>
