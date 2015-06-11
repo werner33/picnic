@@ -50,6 +50,6 @@ class PicnicsController < ApplicationController
     end
 
     def picnic_params
-      params.require(:picnic).permit(:name, :description, :date, :time, :image)
+      params.require(:picnic).permit(:name, :description, :date, :time, :image, :just_date)
     end
 end
