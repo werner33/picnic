@@ -38,7 +38,7 @@
         </div>
           <% if current_user == @picnic.host %>
             <%= link_to 'Edit Picnic Info', edit_picnic_path(@picnic) %> 
-            <%= link_to 'Cancel Picnic', destroy_picnic_path(@picnic),  method: :delete, 
+            <%= link_to 'Cancel Picnic', picnic_path(@picnic),  method: :delete, 
               data: {confirm: 'Are you sure?' } %> 
           <% end %>
       </div>
