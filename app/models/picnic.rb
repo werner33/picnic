@@ -5,7 +5,7 @@ class Picnic < ActiveRecord::Base
   belongs_to :host, :class_name => "User"
   has_many :invites, dependent: :destroy
   has_many :users, through: :invites
-  before_validation :set_just_date
+  before_save :set_just_date
   
   
   accepts_nested_attributes_for :invites

@@ -6,6 +6,7 @@ class ApplicationController < ActionController::Base
   def ensure_admin!
       unless current_user.try(:admin?)
         redirect_to new_user_session_path
+        flash[:alert] = "You are not authorized to do this."
         return false
       end
   end
