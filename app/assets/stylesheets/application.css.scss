@@ -187,14 +187,21 @@ p {
 
 /* navbar */
 
+
+
 .masthead h1 {
     text-align: center;
-    font-size: 4em;
+    font-size: 3.5em;
     color: #7bbd30;
     text-shadow: 4px 4px #F0F0F0;
     padding-bottom: 30px;
 }
 
+@media only screen and ( min-width: 760px) {
+    .masthead h1 {
+        font-size: 4em;
+    }
+}
 
 .navbar-default {
   background-color: #FFF;

@@ -2,11 +2,14 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.calendar {
+#calendar {
   border-collapse: collapse;
   width: 100%;
   margin-bottom: 60px;
-
+  
+  a:hover {
+    background: none;
+  }
   td, th {
     font-family: "Lucida Grande", arial, helvetica, sans-serif;
     font-size: 10px;
@@ -49,3 +52,4 @@
   font-size: 11px;
   padding-left: 20px;
 }
+

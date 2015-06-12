@@ -2,7 +2,7 @@
       <div class="col-sm-6 col-sm-offset-2">    
       <div id="calendar">
  
-          <h2 id="month">
+          <h2 class="center" id="month">
             <%= link_to "<", date: @date.prev_month %>
             <%= @date.strftime("%B %Y") %>
             <%= link_to ">", date: @date.next_month %>
