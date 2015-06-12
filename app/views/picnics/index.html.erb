@@ -2,57 +2,43 @@
 
 <div class="container">
 
-<h1 class="next_picnic">Let's Have A Picnic</h1>
+<h1 class="next_picnic">Next Picnic</h1>
 <hr class="h_rule">  
 <div class="row">
   <div class="col-sm-8 col-sm-offset-2 center">
-    <p class="about_description">When the weather is good in New York City, there is nothing I like to 
-    do more than have a picnic. The best part about a picnic is you never run 
-    out of room; everyone is welcome! I created this site to make sure that anyone
-    who is interested can see when the next picnic is and what everyone is 
-    bringing.</p>
+    <h2><%= @next_picnic.name %></h2>
+    <%= image_tag @next_picnic.image %>
+    <p class="about_description"><%= @next_picnic.description %></p>
     </div>
-  </div>
-  <div class="row three_cols">
-    <h1 class="next_picnic">Picnics and more...</h1>
-    <hr class="h_rule"> 
-    <div class="col-sm-4">
-      <h3><%=link_to "Next Picnic", picnic_path(@picnic) %></h3>
-      
-      <%= image_tag 'girls_picnics.jpg', width: '10' %>  
-      <p><%= simple_format(truncate(@picnic.description, length: 150)) %></p>
-      <div class="center">
-      <%= link_to "RSVP", picnic_path(@picnic), class: "btn perfect-red-button col-btn" %>
-      </div>
-    </div>
- 
-    <div class="col-sm-4">
-      <h3><a href="/photos">Photos</a></a></h3>
-      <%= image_tag "picnic_guitar.jpg", width: '10' %>  
-      <p>Check out these photos from past picnics.</p>
-        
-      <p> Attended a picnic? Share 
-      your photos with everyone by uploading them.</p>
-      <div class="center">
-        <%= link_to "See Photos", picnic_path(@picnic), class: "col-btn col-btn-2 btn perfect-red-button" %>
-      </div>
-    </div>
-    <div class="col-sm-4">
-      <h3><a href="/">Calendar</a></h3>
-      <%= image_tag "picnic_portrait.jpg", width: '10' %>  
-      <p>If you can't make the next picnic, check out this calendar of when
-      and where the next few picnics will be taking place. Its a great way to
-      get outside, make friends and eat good food.</p>
-      <div class="center">
-        <%= link_to "See Calendar", calendar_path, class: "btn perfect-red-button col-btn" %>
-      </div>
-    </div>
-  </div>
-  <hr class="h_rule"> 
-  <div class="row">
-    <div class="col-sm-4 col-sm-offset-4 center">
-     <h2>The next picnic is in <%= distance_of_time_in_words_to_now(@picnic.date) %>.</h2>
-        <%= link_to "RSVP", picnic_path(@picnic), class: "btn perfect-red-button" %>
-    </div>
-  </div>
+    <hr class="h_rule">
 </div>
+<h1 class="next_picnic">Coming Up!</h1>
+<hr class="h_rule">  
+<div class="row">
+  <div class="col-sm-8 col-sm-offset-2 center">
+    <% @future_picnics.in_groups_of(2) do |picnics| %>
+      <% picnics.each do |picnic|  %>
+        <h3><%= picnic.name %></h3>
+        <%= image_tag @next_picnic.image, size: 10 %>
+        <p class="about_description"><%= @next_picnic.description %></p>
+      <% end %>  
+    <% end %>
+    </div>
+    <hr class="h_rule">
+</div>
+<h1 class="next_picnic">Past Picnics</h1>
+<hr class="h_rule">  
+<div class="row">
+  <div class="col-sm-8 col-sm-offset-2 center">
+    <% @past_picnics.in_groups_of(2) do |picnics| %>
+      <% picnics.each do |picnic|  %>
+        <h3><%= picnic.name %></h3>
+        <%= image_tag @next_picnic.image, size: 10 %>
+        <p class="about_description"><%= @next_picnic.description %></p>
+      <% end %>  
+    <% end %>
+    </div>
+    <hr class="h_rule">
+</div>
+
+ 

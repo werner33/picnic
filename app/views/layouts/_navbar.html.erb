@@ -20,13 +20,13 @@
             </div>
             <div class="collapse navbar-collapse">
                 <ul class="nav">
-                    <li class="active"><a href="/">Home</a></li>
-                    <li><a href="/">Picnics</a></li>
-                    <li><a href="/calendar">Calendar</a></li>
+                    <li><%= link_to "Home", root_path %></li>
+                    <li><%= link_to "Picnics", picnics_path %></li>
+                    <li><%= link_to "Calendar", calendar_path %></li>
                     <% if user_signed_in? %>
-                    <li><%= link_to 'Log out', destroy_user_session_path, method: :delete %></li>
+                        <li><%= link_to 'Log out', destroy_user_session_path, method: :delete %></li>
                     <% else %>
-                    <li><%= link_to "Login", new_user_session_path %></li>
+                        <li><%= link_to "Login", new_user_session_path %></li>
                     <!--<li><%= link_to "Create Account", user_registration_path %></li>-->
                     <% end %>
                 </ul>

@@ -7,7 +7,9 @@ class PicnicsController < ApplicationController
 
   def index
     @picnics = Picnic.all
-    @picnic = Picnic.where('date >= ?', Date.today).order(:date).first
+    @future_picnics = Picnic.where('date >= ?', Date.today).order(:date)
+    @past_picnics = Picnic.where('date <= ?', Date.today).order(:date)
+    @next_picnic = @future_picnics.first
     respond_with(@picnics)
   end
 

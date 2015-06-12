@@ -1,14 +1,18 @@
 Rails.application.routes.draw do
   
+  
+  root 'static_pages#home'
+  get 'static_pages/home'
+  get 'static_pages/about'
+  get 'static_pages/contact'
+  get 'static_pages/why_picnics'
+  get 'static_pages/what_to_bring'
   get 'invite/create'
-
   resources :picnics
   resources :invites
   devise_for :users,  :controllers => { registrations: 'registrations', :omniauth_callbacks => "users/omniauth_callbacks" }
   resources :subscriptions
   post 'subscriptions/subscribe' => 'subscriptions#subscribe'
-  root 'picnics#index'
-  
   get '/calendar' => 'calendar#calendar'
   
   # The priority is based upon order of creation: first created -> highest priority.
