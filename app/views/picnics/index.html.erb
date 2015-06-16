@@ -27,22 +27,6 @@
     </div>
   <% end %>
 </div>
-<hr class="h_rule">
-<h1 class="next_picnic">Past Picnics</h1>
-<hr class="h_rule">  
-<div class="row">
-  <% @past_picnics.in_groups_of(2) do |picnics| %>
-    <div class="col-sm-3-offset">
-    <% picnics.each do |picnic| %>
-      <div class="col-sm-6 center">
-        <h3><%= picnic.name %></h3>
-        <%= image_tag picnic.image, size: 10 %>
-        <p class="about_description"><%= picnic.description %></p>
-      </div>
-    <% end %>
-    </div>
-  <% end %>
-</div>
     <hr class="h_rule">
 </div>
 
