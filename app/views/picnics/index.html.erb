@@ -13,31 +13,36 @@
     <hr class="h_rule">
 </div>
 <h1 class="next_picnic">Coming Up!</h1>
-<hr class="h_rule">  
+<hr class="h_rule"> 
 <div class="row">
-  <div class="col-sm-8 col-sm-offset-2 center">
-    <% @future_picnics.in_groups_of(2) do |picnics| %>
-      <% picnics.each do |picnic|  %>
+  <% @future_picnics.in_groups_of(2) do |picnics| %>
+    <div class="col-sm-3-offset">
+    <% picnics.each do |picnic| %>
+      <div class="col-sm-6 center">
         <h3><%= picnic.name %></h3>
-        <%= image_tag @next_picnic.image, size: 10 %>
-        <p class="about_description"><%= @next_picnic.description %></p>
-      <% end %>  
+        <%= image_tag picnic.image, size: 10 %>
+        <p class="about_description"><%= picnic.description %></p>
+      </div>
     <% end %>
     </div>
-    <hr class="h_rule">
+  <% end %>
 </div>
+<hr class="h_rule">
 <h1 class="next_picnic">Past Picnics</h1>
 <hr class="h_rule">  
 <div class="row">
-  <div class="col-sm-8 col-sm-offset-2 center">
-    <% @past_picnics.in_groups_of(2) do |picnics| %>
-      <% picnics.each do |picnic|  %>
+  <% @past_picnics.in_groups_of(2) do |picnics| %>
+    <div class="col-sm-3-offset">
+    <% picnics.each do |picnic| %>
+      <div class="col-sm-6 center">
         <h3><%= picnic.name %></h3>
-        <%= image_tag @next_picnic.image, size: 10 %>
-        <p class="about_description"><%= @next_picnic.description %></p>
-      <% end %>  
+        <%= image_tag picnic.image, size: 10 %>
+        <p class="about_description"><%= picnic.description %></p>
+      </div>
     <% end %>
     </div>
+  <% end %>
+</div>
     <hr class="h_rule">
 </div>
 
