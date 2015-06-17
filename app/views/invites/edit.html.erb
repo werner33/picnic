@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="col-md-4 col-md-offset-4">
+
+<h1>Edit your RSVP</h1>
+
+<%= form_for @invite, :html => {:multipart => true} do |f| %>
+  <% if @invite.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@picnic.errors.count, "error") %> prohibited this picnic from being saved:</h2>
+
+      <ul>
+      <% @invite.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+  <%= f.label :food, "What will you be bringing?" %></br>
+  <%= f.text_field :food, class: "form-field" %></br>
+  
+  <div class="actions">
+    <%= f.submit "Submit", class: "perfect-red-button" %>
+  </div>
+<% end %>
+
+
+<%= link_to 'Back', @picnic %> 
+
+  </div>
+</div>  
