@@ -1,4 +1,4 @@
-<%= image_tag "picnic_food.jpg", class: "stretchimage" %>
+s<%= image_tag "picnic_food.jpg", class: "stretchimage" %>
 
 <div class="container">
 
@@ -6,9 +6,13 @@
 <hr class="h_rule">  
 <div class="row">
   <div class="col-sm-8 col-sm-offset-2 center">
-    <h2><%= @next_picnic.name %></h2>
+    <div class="three_cols">
+      <h2><%= link_to @next_picnic.name, picnic_path(@next_picnic) %></h2>
+    </div>
     <%= image_tag @next_picnic.image %>
     <p class="about_description"><%= @next_picnic.description %></p>
+    <h2>The picnic is happening in <%= distance_of_time_in_words_to_now(@next_picnic.date) %>.</h2>
+    <%= link_to "RSVP", picnic_path(@next_picnic), class: "btn perfect-red-button" %>
     </div>
     <hr class="h_rule">
 </div>
@@ -16,15 +20,37 @@
 <hr class="h_rule"> 
 <div class="row">
   <% @future_picnics.in_groups_of(2) do |picnics| %>
-    <div class="col-sm-3-offset">
     <% picnics.each do |picnic| %>
       <div class="col-sm-6 center">
-        <h3><%= picnic.name %></h3>
-        <%= image_tag picnic.image, size: 10 %>
-        <p class="about_description"><%= picnic.description %></p>
+        <div class="three_cols">
+          <h3><%= link_to picnic.name, picnic_path(picnic) %></h3>
+        </div>        <%= image_tag picnic.image, width: "300" %>
+        <div class="short_description">
+          <%= simple_format(truncate(picnic.description, length: 200)) %>
+        </div>
+        <h4 class="center date"><%= (picnic.date.strftime("%A, %B %d, %Y at %l:%M %p")) %></h4>
+        <%= link_to "RSVP", picnic_path(picnic), class: "btn perfect-red-button" %>
       </div>
     <% end %>
-    </div>
+  <% end %>
+</div>
+<hr class="h_rule">
+<h1 class="next_picnic">Past Picnics</h1>
+<hr class="h_rule">  
+<div class="row">
+  <% @past_picnics.in_groups_of(2) do |picnics| %>
+    <% picnics.each do |picnic| %>
+      <div class="col-sm-6 center">
+        <div class="three_cols">
+          <h3><%= link_to picnic.name, picnic_path(picnic) %></h3>
+        </div>
+        <%= image_tag picnic.image, width: "300" %>
+        <div class="short_description">
+          <%= simple_format(truncate(picnic.description, length: 200)) %>
+        </div>  
+        <h4 class="center date"><%= (picnic.date.strftime("%A, %B %d, %Y at %l:%M %p")) %></h4>
+        </div>
+    <% end %>
   <% end %>
 </div>
     <hr class="h_rule">

@@ -84,7 +84,7 @@ p {
 .stretchimage { 
     width: 100%; 
     overflow: hidden;
-    padding-bottom: 40px;
+    padding-bottom: 25px;
 }
 
 
@@ -122,6 +122,8 @@ p {
 .h_rule {
   border: 1px solid #7BBD30;
   width: 60%;
+  margin-bottom: 10px;
+  margin-top: 10px;
 }
 
 .subheader {
@@ -130,7 +132,7 @@ p {
 }
 
 .three_cols {
-    padding-top: 40px;
+    padding-top: 20px;
     padding-bottom: 10px;
 }
 
@@ -170,7 +172,7 @@ p {
   color: #686868 !important;
   font-weight: 600 !important;
   font-size: 1.35em !important;
-  padding-top: 8px !important;
+  padding-top: 12px !important;
   border-radius: 0 !important;
   transition: color 0.25s cubic-bezier(0.23, 0.4, 0.62, 0.92), -webkit-text-stroke-color 0.25s cubic-bezier(0.23, 0.4, 0.62, 0.92) !important;
   background-color: #ed342a !important;
@@ -186,8 +188,6 @@ p {
 
 
 /* navbar */
-
-
 
 .masthead h1 {
     text-align: center;
@@ -231,7 +231,6 @@ p {
 }
 
 
-	
 .row {
   margin-left: 0px;
   margin-right: 0px;
@@ -282,13 +281,11 @@ footer h4 {
 }
 
 
-
 .footer-link {
     color: #7bbd30;
     font-size: 1em;
     text-decoration: none;
     padding-bottom: 10px;
-
 }
 
 footer h4 a {
@@ -299,7 +296,6 @@ footer ul {
   list-style: none;
   margin-top: 1em;
   padding-left: 0;
-  
 }
 
 footer ul li {
@@ -324,8 +320,6 @@ footer {
 
 
 /* Subscribe form */
-
-
 
 .subscribe-field {
   height: 2.8em;
@@ -385,7 +379,7 @@ footer {
     }
 }
 
-/* Picinic Page */
+/* Picnic Page */
 
 .picnic {
     img {
@@ -409,4 +403,16 @@ footer {
     .rsvp {
         padding-bottom: 30px;
     }
+}
+
+/* picnic index */
+
+.short_description {
+ width: 70%;
+ padding: 5px;
+ text-align: center;
+ line-height: 1.5em;
+ font-size: 1.5em;
+ margin: 0 auto;
+ 
 }
