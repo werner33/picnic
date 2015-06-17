@@ -19,6 +19,8 @@ class InvitesController < ApplicationController
   end
 
   def edit
+    @invite = Invite.find(params[:id])
+    @picnic = Picnic.find(@invite.picnic_id)
   end
 
   def create
@@ -31,7 +33,7 @@ class InvitesController < ApplicationController
 
   def update
     @invite.update(invite_params)
-    respond_with(@invite)
+    redirect_to picnic_path(@invite.picnic_id)
   end
 
   def destroy

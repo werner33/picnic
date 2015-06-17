@@ -33,7 +33,11 @@
           <h3>Guests: </h3>
    
           <% @picnic.users.each do |u|  %>
-            <p><%= u.first_name %> is bringing <%= u.invites.find_by(picnic_id: @picnic.id).food %>.</p>
+            <p><%= u.first_name %> is bringing <%= u.invites.find_by(picnic_id: @picnic.id).food %>.
+            <% if u == current_user %>
+              <%= link_to 'Change', edit_invite_path(u.invites.find_by(picnic_id: @picnic.id)) %>
+            <% end %> 
+            </p>
           <% end %> 
         </div>
           <% if current_user == @picnic.host %>
