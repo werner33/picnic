@@ -10,4 +10,9 @@ class ApplicationController < ActionController::Base
         return false
       end
   end
+  
+  def after_sign_in_path_for(resource)
+    # @picnic = Picnic.where('date >= ?', Date.today).order(:date).first_name
+    picnics_url
+  end
 end
