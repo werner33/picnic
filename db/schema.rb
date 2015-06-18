@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150611181209) do
+ActiveRecord::Schema.define(version: 20150618041845) do
 
   create_table "invites", force: true do |t|
     t.integer  "user_id"
@@ -24,6 +24,19 @@ ActiveRecord::Schema.define(version: 20150611181209) do
   add_index "invites", ["picnic_id"], name: "index_invites_on_picnic_id"
   add_index "invites", ["user_id"], name: "index_invites_on_user_id"
 
+  create_table "photo_galleries", force: true do |t|
+    t.integer  "picnic_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "photos", force: true do |t|
+    t.string   "image"
+    t.integer  "photo_gallery_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "picnics", force: true do |t|
     t.string   "name"
     t.datetime "date"
@@ -35,6 +48,7 @@ ActiveRecord::Schema.define(version: 20150611181209) do
     t.integer  "host_id"
     t.string   "image"
     t.date     "just_date"
+    t.integer  "photo_gallery_id"
   end
 
   create_table "subscriptions", force: true do |t|
