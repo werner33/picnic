@@ -19,7 +19,7 @@
 <h1 class="next_picnic">Coming Up!</h1>
 <hr class="h_rule"> 
 <div class="row">
-  <% @future_picnics.in_groups_of(2) do |picnics| %>
+  <% @future_picnics.in_groups_of(2, false) do |picnics| %>
     <% picnics.each do |picnic| %>
       <div class="col-sm-6 center">
         <div class="three_cols">
@@ -38,7 +38,7 @@
 <h1 class="next_picnic">Past Picnics</h1>
 <hr class="h_rule">  
 <div class="row">
-  <% @past_picnics.in_groups_of(2) do |picnics| %>
+  <% @past_picnics.in_groups_of(2,false) do |picnics| %>
     <% picnics.each do |picnic| %>
       <div class="col-sm-6 center">
         <div class="three_cols">

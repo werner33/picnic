@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get 'invite/create'
   resources :picnics
   resources :invites
+  resources :photo_galleries
   devise_for :users,  :controllers => { registrations: 'registrations', :omniauth_callbacks => "users/omniauth_callbacks" }
   resources :subscriptions
   post 'subscriptions/subscribe' => 'subscriptions#subscribe'
