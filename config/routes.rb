@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   
   
+  get 'photos/show'
+
+  get 'photos/create'
+
   root 'static_pages#home'
   get 'static_pages/home'
   get 'static_pages/about'
