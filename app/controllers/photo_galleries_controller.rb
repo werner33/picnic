@@ -1,6 +1,8 @@
 class PhotoGalleriesController < ApplicationController
 
-
+  def index
+      @photo_galleries = PhotoGallery.all
+  end 
 
   def show
       @photo_gallery = PhotoGallery.find(params[:id])

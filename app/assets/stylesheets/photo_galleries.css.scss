@@ -6,3 +6,23 @@
 .img_gallery {
     padding: 5px;
 }
+
+.gallery_name {
+    a {
+        color: #7bbd30;
+    }
+    a:visted {
+        color: #7bbd30;
+    }
+    a:hover {
+        text-decoration: none;
+        background: none;
+        color: #ed342a;
+    }
+}
+
+.gallery_btn {
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 10px;
+}
