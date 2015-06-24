@@ -1,0 +1,20 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-10 col-sm-offset-1">
+        <h1 class="center"> Photos from <%= @photo_gallery.picnic.name %> </h1>
+        <hr class="h_rule">
+        <% @photo_gallery.photos.in_groups_of(3, false) do |group| %>
+          <% group.each do |photo| %>
+           <div class="row col-sm-4 center">
+                <div class="img_gallery">
+                    <%= image_tag photo.image, width: 280 %>
+                </div>
+          </div>
+          <% end %>
+        <% end %>
+        
+         <%= render 'shared/photos_form' %>
+        
+        </div> 
+    </div>
+</div>
