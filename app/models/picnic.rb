@@ -12,11 +12,9 @@ class Picnic < ActiveRecord::Base
   
   
   accepts_nested_attributes_for :invites
+  scope :future_picnics, -> { where('date >= ?', Date.today).order(:date) }
+  scope :future_picnics, -> { where('date <= ?', Date.today).order(:date) }
   
-
-  # def show_date
-  #   self.date.to_s
-  # end 
 
   private
 
