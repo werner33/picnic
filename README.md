@@ -1,4 +1,5 @@
-== ThePicnic.nyc
+ThePicnic.nyc
+==
 
 Sundays in the summer, I host picnics in central park. As they have grown, more 
 and more I get questions about times, locations, what to bring ect. 
