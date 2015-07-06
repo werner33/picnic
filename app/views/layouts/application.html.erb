@@ -11,8 +11,9 @@
   <link href='https://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=Arvo' rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=Josefin+Sans' rel='stylesheet' type='text/css'>
+
 </head>
-<body>
+<body ng-app="AngularPicnic">
 
 <script>
   window.fbAsyncInit = function() {
@@ -32,15 +33,16 @@
    }(document, 'script', 'facebook-jssdk'));
 </script>
 
- 
-   <%= render 'layouts/navbar' %>
+<%= render 'layouts/navbar' %>
 
 <div class="container">
   <h3 class="notice"><%= notice %></h3>
   <h3 class="alert"><%= alert %></h3>
 </div>
-  <%= yield %>
 
-  <%= render 'layouts/footer' %>
+<%= yield %>
+
+<%= render 'layouts/footer' %>
+
 </body>
 </html>

@@ -39,7 +39,7 @@ gem 'jbuilder', '~> 2.0'
 gem "fog-aws"
 gem 'carrierwave', github:'carrierwaveuploader/carrierwave'
 
-
+gem 'bower-rails'
 gem 'devise'
 
 gem 'sdoc', '~> 0.4.0',          group: :doc

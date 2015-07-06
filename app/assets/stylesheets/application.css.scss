@@ -200,16 +200,30 @@ p {
 /* navbar */
 
 .masthead h1 {
-    text-align: center;
-    font-size: 3.5em;
-    color: #7bbd30;
-    text-shadow: 4px 4px #F0F0F0;
-    padding-bottom: 30px;
+    a {
+        display: block;
+        text-align: center;
+        font-size: 1.4em;
+        color: #7bbd30;
+        text-shadow: 4px 4px #F0F0F0;
+        padding-bottom: 30px;
+    }
+     a:visited  {
+        background: none;
+        text-decoration: none;
+        color: none;
+    }
+    a:hover {
+      background: none;
+      text-decoration: none;   
+      color: none;
+    }
+   
 }
 
-@media only screen and ( min-width: 760px) {
-    .masthead h1 {
-        font-size: 4em;
+@media only screen and (min-width: 760px) {
+    .masthead h1 a {
+        font-size: 3em;
     }
 }
 
