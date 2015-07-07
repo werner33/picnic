@@ -27,6 +27,8 @@ group :production do
   gem 'rails_12factor', '0.0.2'
 end
 
+gem 'factory_girl_rails'
+
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
