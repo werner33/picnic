@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   root 'static_pages#home'
   get 'static_pages/home'
-  get 'static_pages/about'
+  get 'about' => 'static_pages#about'
   get 'static_pages/contact'
   get 'static_pages/why_picnics'
   get 'static_pages/what_to_bring'
@@ -17,7 +17,6 @@ Rails.application.routes.draw do
   resources :photo_galleries
   devise_for :users,  :controllers => { registrations: 'registrations', :omniauth_callbacks => "users/omniauth_callbacks" }
   resources :subscriptions, :only => [:new, :create, :delete]
-
   post 'subscriptions/subscribe' => 'subscriptions#subscribe'
   get '/calendar' => 'calendar#calendar'
   
