@@ -343,6 +343,20 @@ footer {
 }
 
 
+
+
+#contact_message {
+    width: 15em;
+    // height: 5em;
+}
+
+@media only screen and ( min-width: 480px) {
+    #contact_message {
+        width: 20em;
+        height: 5em;
+    }
+}
+
 /* Subscribe form */
 
 .subscribe-field {
