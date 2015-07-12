@@ -17,6 +17,8 @@ Rails.application.routes.draw do
   resources :photo_galleries
   devise_for :users,  :controllers => { registrations: 'registrations', :omniauth_callbacks => "users/omniauth_callbacks" }
   resources :subscriptions, :only => [:new, :create, :delete]
+  get 'contact' => 'contacts#new'
+  resources :contacts, :only => [:new, :create]
   post 'subscriptions/subscribe' => 'subscriptions#subscribe'
   get '/calendar' => 'calendar#calendar'
   

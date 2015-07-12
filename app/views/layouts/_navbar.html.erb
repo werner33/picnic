@@ -23,7 +23,7 @@
                     <li><%= link_to "Home", root_path %></li>
                     <li><%= link_to "Picnics", picnics_path %></li>
                     <li><%= link_to "Photos", photo_galleries_path %></li>
-                    <li><%= link_to "Calendar", calendar_path %></li>
+                    <li><%= link_to "Contact Us", contact_path %></li>
                     <% if user_signed_in? %>
                         <li><%= link_to 'Log out', destroy_user_session_path, method: :delete %></li>
                     <% else %>
