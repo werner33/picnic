@@ -51,6 +51,10 @@ class PicnicsController < ApplicationController
     def set_picnic
       @picnic = Picnic.find(params[:id])
     end
+    
+    def picnic_params
+      params.require(:picnic).permit(:name, :date, :description, :image)
+    end
 
     
     
