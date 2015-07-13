@@ -11,6 +11,9 @@
        <h1><%= @picnic.name %></h1>
        <hr class="h_rule">
        <h3 class="center date"><%= (@picnic.date.strftime("%A, %B %d, %Y at %l:%M %p")) %></h3>
+       <div class="show-picnic-img">
+         <%= image_tag @picnic.image, width: "400" %>
+       </div>   
        <div class="fb-like" data-href= <%= picnic_path(@picnic) %> data-width="100" 
        data-layout="standard" data-action="like" data-show-faces="false" data-share="true">
      
