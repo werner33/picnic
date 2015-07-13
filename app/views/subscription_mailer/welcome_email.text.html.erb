@@ -3,12 +3,20 @@ Welcome to ThePicnic.nyc!
  
 My name is Jordan and I host a picnic just about every Sunday evening
 through the summer in Central Park and everyone is welcome!
+<% if @picnic %>
 
 The next picnic is in <%= distance_of_time_in_words_to_now(@picnic.date) %> on 
 <%= @picnic.date.strftime("%A, %B %d at %l:%M %p") %>. 
 Bring some food and your friends!     
  
 To login to the site and RSVP, just follow this link: <%= @url %>.
+    
+<% else %>
+There are currently no upcoming picnics. But don't worry, we'll email
+you as soon as the next one is planned. In the mean time, you can think
+about what you're going to bring. ;)
+
+<% end %>
  
 Look forward to seeing you!
 

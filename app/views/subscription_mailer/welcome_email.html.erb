@@ -4,13 +4,20 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
   <body>
-    <h1>Welcome to ThePicnic.nyc!</h1>
-    
-    <p>
-      The next picnic is in <%= distance_of_time_in_words_to_now(@picnic.date) %> 
-      on  <%= @picnic.date.strftime("%A, %B %d at %l:%M %p") %>. Please join us!    
-      To login and RSVP, just follow this link: <%= @url %>.
-    </p>
+    <h3>Welcome to ThePicnic.nyc!</h3>
+    <% if @picnic %>
+      <p>
+        The next picnic is in <%= distance_of_time_in_words_to_now(@picnic.date) %> 
+        on  <%= @picnic.date.strftime("%A, %B %d at %l:%M %p") %>. Please join us!    
+        To login and RSVP, just follow this link: <%= @url %>.
+      </p>
+    <% else %>
+      <p>
+        There are currently no upcoming picnics. But don't worry, we'll email
+        you as soon as the next one is planned. In the mean time, you can think
+        about what you're going to bring. ;)
+      </p>
+    <% end %>
     <p>We look forward to seeing you!</p>
   </body>
 </html>
