@@ -1,0 +1,14 @@
+<div class="container">
+    <div class="row contact-form">
+        <div class="col-sm-6 col-sm-offset-3">
+           <%= form_for Contact.new do |f| %>
+               <%= f.label :email %></br>
+               <%= f.text_field :email, :placeholder => "Enter email", class: "subscribe-field"%><br>
+               <%= f.label :message %></br>
+               <%= f.text_area :message, class: "subscribe-field" %></br>
+               <%= f.submit "Send", class: "subscribe-button" %>
+            <% end %>
+        </div>
+    </div>
+</div>
+
