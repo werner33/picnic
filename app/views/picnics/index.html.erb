@@ -57,18 +57,20 @@
 <hr class="h_rule">  
 <div class="row">
   <% @past_picnics.in_groups_of(2,false) do |picnics| %>
-    <% picnics.each do |picnic| %>
-      <div class="col-sm-6 center">
-        <div class="three_cols">
-          <h3><%= link_to picnic.name, picnic_path(picnic) %></h3>
-        </div>
-        <%= image_tag picnic.image, width: "300" %>
-        <div class="short_description">
-          <%= simple_format(truncate(picnic.description, length: 200)) %>
-        </div>  
-        <h4 class="center date"><%= (picnic.date.strftime("%A, %B %d, %Y at %l:%M %p")) %></h4>
-        </div>
-    <% end %>
+    <div class="row">
+      <% picnics.each do |picnic| %>
+        <div class="col-sm-6 center">
+          <div class="three_cols">
+            <h3><%= link_to picnic.name, picnic_path(picnic) %></h3>
+          </div>
+          <%= image_tag picnic.image, width: "300" %>
+          <div class="short_description">
+            <%= simple_format(truncate(picnic.description, length: 200)) %>
+          </div>  
+          <h4 class="center date"><%= (picnic.date.strftime("%A, %B %d, %Y at %l:%M %p")) %></h4>
+          </div>
+      <% end %>
+    </div>
   <% end %>
 </div>
     <hr class="h_rule">

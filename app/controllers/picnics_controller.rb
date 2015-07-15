@@ -8,7 +8,7 @@ class PicnicsController < ApplicationController
   def index
     @picnics = Picnic.all
     @future_picnics = Picnic.future_picnics
-    @past_picnics = Picnic.past_picnics
+    @past_picnics = Picnic.past_picnics.first(4)
     @next_picnic = @future_picnics.first
     respond_with(@picnics)
   end
