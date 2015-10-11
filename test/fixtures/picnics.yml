@@ -14,7 +14,7 @@ one:
   name: First Picnic
   date: 2015-10-10
   description: This is a test picnic.
-  host_id: one
+  host_id: 1
 
 
 # column: value
