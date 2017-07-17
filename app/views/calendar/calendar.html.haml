@@ -1,0 +1,12 @@
+.container
+  .col-sm-6.col-sm-offset-3
+    #calendar
+      %h2#month.center
+        = link_to "<", date: @date.prev_month
+        = @date.strftime("%B %Y")
+        = link_to ">", date: @date.next_month
+      = calendar @date do |date|
+        = date.day
+        - if @picnics_by_date[date]
+          - @picnics_by_date[date].each do |picnic|
+            %h5= link_to picnic.name, picnic

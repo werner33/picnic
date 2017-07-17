@@ -1,0 +1,43 @@
+.picnic
+  .picnic_img
+    = image_tag "picnic.jpg"
+  .container
+    %p#notice= notice
+    .row
+      .col-sm-6.col-sm-offset-3
+        %h1= @picnic.name
+        %hr.h_rule/
+        %h3.center.date= (@picnic.date.strftime("%A, %B %d, %Y at %l:%M %p"))
+        .show-picnic-img
+          = image_tag @picnic.image, width: "400"
+        .fb-like{"data-href" => "<haml_loud"}
+          picnic_path(@picnic)  data-width="100"
+          data-layout="standard" data-action="like" data-show-faces="false" data-share="true"&gt;
+        %p= simple_format @picnic.description, class: "description"
+        %p.host
+          This Picnic is hosted by:
+          %strong= @picnic.host.first_name
+    .row
+      .col-sm-6.col-sm-offset-3
+        - if user_signed_in? && @picnic.users.include?(current_user)
+          %h3 Thanks for your RSVP. Looking forward to seeing you!
+        - elsif user_signed_in?
+          = render 'shared/invite_form.html.erb'
+        - else
+          %p
+            = link_to "Log in", new_user_session_path
+            to RSVP.
+    .row
+      .col-sm-6.col-sm-offset-3
+        .rsvp
+          %h3 Guests:
+          - @picnic.users.each do |u|
+            %p
+              = u.first_name
+              is bringing #{u.invites.find_by(picnic_id: @picnic.id).food}.
+              - if u == current_user
+                = link_to 'Change', edit_invite_path(u.invites.find_by(picnic_id: @picnic.id))
+        - if current_user == @picnic.host
+          = link_to 'Edit Picnic Info', edit_picnic_path(@picnic)
+          = link_to 'Cancel Picnic', picnic_path(@picnic),  method: :delete, |
+            data: {confirm: 'Are you sure?' }                                |

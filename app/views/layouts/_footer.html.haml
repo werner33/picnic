@@ -1,0 +1,47 @@
+%footer
+  .container
+    .row
+      .col-sm-2.first-col-footer
+        %h4.first-col-footer-title
+          Picnic Info
+        %h4.footer-link
+          %a{:href => "/about"} About ThePicnic.nyc
+        %h4.footer-link
+          %a.footer-link{:href => "#"} What should I bring?
+          %br/
+      .col-sm-2.second-col-footer
+        %h4
+          %a{:href => "#"} Host a Picnic
+        %h4
+          = link_to "Photos", photo_galleries_path
+        %h4
+          %a{:href => "/contact"} Contact
+        %h4
+          = link_to "Calendar", calendar_path
+      .col-sm-5.subscription
+        %h4
+          Subscribe for updates:
+        = render 'shared/subscription_form'
+        %h4
+          Still not convinced?
+        %p.pitch
+          We have tons of fun at our picinics and there are pictures
+          to prove it. Check them out #{link_to 'here', photo_galleries_path}.
+      .col-sm-3
+        - if user_signed_in?
+          %h4
+            = link_to 'Log out', destroy_user_session_path, method: :delete
+          %h4
+            = link_to "Settings", edit_user_registration_path
+        - else
+          %h4
+            = link_to "Login", new_user_session_path
+          %h4
+            = link_to "Create Account", new_user_registration_path
+        %ul
+          %li
+            = image_tag("twitter.png")
+          %li
+            = image_tag("facebook.png")
+          %li
+            = image_tag("instagram.png")

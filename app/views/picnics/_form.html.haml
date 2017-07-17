@@ -1,0 +1,19 @@
+= form_for @picnic, :html => {:multipart => true} do |f|
+  - if @picnic.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(@picnic.errors.count, "error")
+        prohibited this picnic from being saved:
+      %ul
+        - @picnic.errors.full_messages.each do |message|
+          %li= message
+  = f.label :name
+  = f.text_field :name, class: "form-field"
+  = f.label :date
+  = f.datetime_select :date
+  = f.label :description
+  = f.text_area :description, class: "form-field"
+  = f.label :image
+  = f.file_field :image
+  .actions
+    = f.submit "Submit", class: "perfect-red-button"

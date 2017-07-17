@@ -1,0 +1,17 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+  %body
+    %h3 Welcome to ThePicnic.nyc!
+    - if @picnic
+      %p
+        The next picnic is in #{distance_of_time_in_words_to_now(@picnic.date)}
+        on  #{@picnic.date.strftime("%A, %B %d at %l:%M %p")}. Please join us!
+        To login and RSVP, just follow this link: #{@url}.
+    - else
+      %p
+        There are currently no upcoming picnics. But don't worry, we'll email
+        you as soon as the next one is planned. In the mean time, you can think
+        about what you're going to bring. ;)
+    %p We look forward to seeing you!

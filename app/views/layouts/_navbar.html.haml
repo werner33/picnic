@@ -1,0 +1,25 @@
+.masthead
+  .container
+    .row
+      %h1
+        = link_to 'ThePicnic.nyc', root_path
+#nav.affix-top
+  .navbar.navbar-default.navbar-static
+    .container
+      .navbar-header
+        %button.navbar-toggle{"data-target" => ".navbar-collapse", "data-toggle" => "collapse", :type => "button"}
+          %span.sr-only Toggle navigation
+          %span.icon-bar
+          %span.icon-bar
+          %span.icon-bar
+      .collapse.navbar-collapse
+        %ul.nav
+          %li= link_to "Home", root_path
+          %li= link_to "Picnics", picnics_path
+          %li= link_to "Photos", photo_galleries_path
+          %li= link_to "Contact Us", contact_path
+          - if user_signed_in?
+            %li= link_to 'Log out', destroy_user_session_path, method: :delete
+          - else
+            %li= link_to "Login", new_user_session_path
+            / <li><haml_loud> link_to &quot;Create Account&quot;, user_registration_path </haml_loud></li>

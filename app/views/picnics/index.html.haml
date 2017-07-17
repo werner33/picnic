@@ -1,0 +1,55 @@
+= image_tag "picnic_food.jpg", class: "stretchimage"
+.container
+  - if @next_picnic
+    %h1.next_picnic Next Picnic
+    %hr.h_rule/
+    .row
+      .col-sm-8.col-sm-offset-2.center
+        .three_cols
+          %h2= link_to @next_picnic.name, picnic_path(@next_picnic)
+        = image_tag @next_picnic.image, width: "400"
+        %p.about_description= @next_picnic.description
+        %h2
+          The picnic is happening in #{distance_of_time_in_words_to_now(@next_picnic.date)}.
+        = link_to "RSVP", picnic_path(@next_picnic), class: "btn perfect-red-button"
+      %hr.h_rule/
+    %h1.next_picnic Upcoming Picnics
+    %hr.h_rule/
+    .row
+      - @future_picnics.in_groups_of(2, false) do |picnics|
+        - picnics.each do |picnic|
+          .col-sm-6.center
+            .three_cols
+              %h3= link_to picnic.name, picnic_path(picnic)
+            = image_tag picnic.image, width: "300"
+            .short_description
+              = simple_format(truncate(picnic.description, length: 200))
+            %h4.center.date= (picnic.date.strftime("%A, %B %d, %Y at %l:%M %p"))
+            = link_to "RSVP", picnic_path(picnic), class: "btn perfect-red-button"
+    %hr.h_rule/
+  - else
+    %h1.next_picnic Next Picnic
+    %hr.h_rule/
+    .row
+      .col-md-6.col-md-offset-3
+        %p
+          There are no upcoming picnics currently scheduled. Enter your email below
+          and we'll email you about the next one.
+        .center
+          = form_for Subscription.new do |f|
+            = f.text_field :email, :placeholder => "enter email", class: "subscribe-field"
+            = f.submit "Go", class: "subscribe-button"
+  %h1.next_picnic Past Picnics
+  %hr.h_rule/
+  .row
+    - @past_picnics.in_groups_of(2,false) do |picnics|
+      .row
+        - picnics.each do |picnic|
+          .col-sm-6.center
+            .three_cols
+              %h3= link_to picnic.name, picnic_path(picnic)
+            = image_tag picnic.image, width: "300"
+            .short_description
+              = simple_format(truncate(picnic.description, length: 200))
+            %h4.center.date= (picnic.date.strftime("%A, %B %d, %Y at %l:%M %p"))
+  %hr.h_rule/

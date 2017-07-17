@@ -1,0 +1,12 @@
+.container
+  .row
+    - @photo_galleries.each do |gallery|
+      .row
+        .col-sm-8.col-sm-offset-2
+          .gallery_name
+            %h3.center= link_to gallery.picnic.name, gallery
+          - gallery.photos.take(4).each do |photo|
+            = image_tag photo.image, width: 175
+      .col-sm-2.col-sm-offset-5
+        = link_to "More Photos", gallery, class: "gallery_btn btn perfect-red-button"
+      %hr.h_rule/

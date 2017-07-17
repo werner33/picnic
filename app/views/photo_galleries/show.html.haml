@@ -1,0 +1,12 @@
+.container
+  .row
+    .col-sm-10.col-sm-offset-1
+      %h1.center
+        Photos from #{@photo_gallery.picnic.name}
+      %hr.h_rule/
+      - @photo_gallery.photos.in_groups_of(3, false) do |group|
+        - group.each do |photo|
+          .row.col-sm-4.center
+            .img_gallery
+              = image_tag photo.image, width: 280
+      = render 'shared/photos_form'

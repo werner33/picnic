@@ -1,0 +1,21 @@
+
+
+database 
+
+models => schema 
+
+json 
+
+ picnic : {
+     date: 12-3-45,
+     location: central park,
+     guests: 32
+ }
+ 
+ 
+ picnic.guests  
+
+controller => what can it do? or can be done to it? 
+
+view => rendering for the user
+
