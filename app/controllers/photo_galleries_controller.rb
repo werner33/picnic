@@ -2,6 +2,7 @@ class PhotoGalleriesController < ApplicationController
 
   def index
       @photo_galleries = PhotoGallery.all
+      # @photo_galleries.sort { |a,b| a.id <=> b.id }
   end 
 
   def show
