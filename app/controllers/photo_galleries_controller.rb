@@ -1,8 +1,8 @@
 class PhotoGalleriesController < ApplicationController
 
   def index
-      @photo_galleries = PhotoGallery.all
-      # @photo_galleries.sort { |a,b| a.id <=> b.id }
+      all_photos = PhotoGallery.all
+      @photo_galleries = all_photos.sort{ |a,b| b.id <=> a.id }
   end 
 
   def show

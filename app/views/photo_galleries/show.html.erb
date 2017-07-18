@@ -7,7 +7,9 @@
           <% group.each do |photo| %>
            <div class="row col-sm-4 center">
                 <div class="img_gallery">
-                    <%= image_tag photo.image, width: 280 %>
+                    <%= link_to image_url(photo.image) do %>
+                      <%= image_tag photo.image, width: 280 %>
+                    <% end %>
                 </div>
           </div>
           <% end %>

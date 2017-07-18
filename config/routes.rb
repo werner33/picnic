@@ -1,26 +1,28 @@
 Rails.application.routes.draw do
-  
-  
-  get 'photos/show'
-
-  get 'photos/create'
-
-  root 'static_pages#home'
-  get 'static_pages/home'
-  get 'about' => 'static_pages#about'
-  get 'static_pages/contact'
-  get 'static_pages/why_picnics'
-  get 'static_pages/what_to_bring'
-  get 'invite/create'
+  devise_for :users,  :controllers => { registrations: 'registrations', :omniauth_callbacks => "users/omniauth_callbacks" }
+  resources :subscriptions, :only => [:new, :create, :delete]
   resources :picnics
   resources :invites
   resources :photo_galleries
-  devise_for :users,  :controllers => { registrations: 'registrations', :omniauth_callbacks => "users/omniauth_callbacks" }
-  resources :subscriptions, :only => [:new, :create, :delete]
-  get 'contact' => 'contacts#new'
   resources :contacts, :only => [:new, :create]
-  post 'subscriptions/subscribe' => 'subscriptions#subscribe'
+  
+  root 'static_pages#home'
+  
+  get 'static_pages/contact'
+  get 'static_pages/why_picnics'
+  get 'static_pages/what_to_bring'
+  get 'static_pages/home'
+  get 'about' => 'static_pages#about'
+    
+  get 'photos/show'
+  get 'photos/create'
+  
+  get 'invite/create'
+  get 'contact' => 'contacts#new'
   get '/calendar' => 'calendar#calendar'
+
+  post 'subscriptions/subscribe' => 'subscriptions#subscribe'
+
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

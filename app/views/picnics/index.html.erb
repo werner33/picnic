@@ -9,7 +9,9 @@
       <div class="three_cols">
         <h2><%= link_to @next_picnic.name, picnic_path(@next_picnic) %></h2>
       </div>
-      <%= image_tag @next_picnic.image, width: "400" %>
+      <%= link_to image_url(picnic_path(@next_picnic)) do %>
+        <%= image_tag @next_picnic.image, width: "400" %>
+      <% end %>
       <p class="about_description"><%= @next_picnic.description %></p>
       <h2>The picnic is happening in <%= distance_of_time_in_words_to_now(@next_picnic.date) %>.</h2>
       <%= link_to "RSVP", picnic_path(@next_picnic), class: "btn perfect-red-button" %>
@@ -25,7 +27,10 @@
       <div class="col-sm-6 center">
         <div class="three_cols">
           <h3><%= link_to picnic.name, picnic_path(picnic) %></h3>
-        </div>        <%= image_tag picnic.image, width: "300" %>
+        </div>        
+        <%= link_to image_url(picnic_path(picnic)) do %>
+            <%= image_tag picnic.image, width: "300" %>
+          <% end %>
         <div class="short_description">
           <%= simple_format(truncate(picnic.description, length: 200)) %>
         </div>
@@ -63,7 +68,9 @@
           <div class="three_cols">
             <h3><%= link_to picnic.name, picnic_path(picnic) %></h3>
           </div>
-          <%= image_tag picnic.image, width: "300" %>
+          <%= link_to image_url(picnic_path(picnic)) do %>
+            <%= image_tag picnic.image, width: "300" %>
+          <% end %>
           <div class="short_description">
             <%= simple_format(truncate(picnic.description, length: 200)) %>
           </div>  
@@ -75,5 +82,3 @@
 </div>
     <hr class="h_rule">
 </div>
-
- 

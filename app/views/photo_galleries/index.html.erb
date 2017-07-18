@@ -4,12 +4,20 @@
         <div class="row">
           <div class="col-sm-8 col-sm-offset-2">
           <div class="gallery_name">
-            <h3 class="center"><%= link_to gallery.picnic.name, gallery %></h3>
+            <h3 class="center">
+                <% if gallery.picnic %>
+                    <%= link_to(gallery.picnic.name, gallery) %>
+                <% else %>
+                    <%= link_to("No Picnic Name", gallery) %>
+                <% end %>
+            </h3>
           </div>
-           <% gallery.photos.take(4).each do |photo| %>
-             <%= image_tag photo.image, width: 175 %>
-           <% end %>
-           </div>
+          <% gallery.photos.take(4).each do |photo| %>
+            <%= link_to image_url(photo.image) do %>
+              <%= image_tag photo.image, width: 175 %>
+            <% end %>
+          <% end %>
+          </div>
           </div>
           <div class="col-sm-2 col-sm-offset-5">
           <%= link_to "More Photos", gallery, class: "gallery_btn btn perfect-red-button" %>
