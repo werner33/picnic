@@ -19,7 +19,7 @@
     <div class="col-sm-4">
       
       <% if @picnic %>
-      <h3><%= link_to 'Next Picnic', picnic_path(@picnic) %></h3>
+      <h3><%= link_to 'Next Picnic: ' + @picnic.name, picnic_path(@picnic) %></h3>
       <% else %>
         <h3>Next Picnic</h3>
       <% end %>
