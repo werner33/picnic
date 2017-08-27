@@ -8,15 +8,21 @@
     <p id="notice"><%= notice %></p>
     <div class="row">
       <div class="col-sm-6 col-sm-offset-3">
-       <h1><%= @picnic.name %></h1>
-       <hr class="h_rule">
-       <h3 class="center date"><%= (@picnic.date.strftime("%A, %B %d, %Y at %l:%M %p")) %></h3>
-       <div class="show-picnic-img">
-         <%= image_tag @picnic.image, width: "400" %>
-       </div>   
+        <h1><%= @picnic.name %></h1>
+        <hr class="h_rule">
+        <h3 class="center date"><%= (@picnic.date.strftime("%A, %B %d, %Y at %l:%M %p")) %></h3>
+      
+       <!--<div class="show-picnic-img">-->
+         <%#= image_tag @picnic.image, width: "400" %>
+       <!--</div>  -->
+        <%= image_tag @picnic.image, :id => 'myImg', alt: @picnic.name %>
+        <div id="photoModal" class="modal">
+          <img class="modal-content" id="img01">
+          <div id="caption"></div>
+        </div>
+        
        <div class="fb-like" data-href= <%= picnic_path(@picnic) %> data-width="100" 
        data-layout="standard" data-action="like" data-show-faces="false" data-share="true">
-     
        </div>
        <p><%= simple_format @picnic.description, class: "description" %></p>
        <p class="host">This Picnic is hosted by: <strong><%= @picnic.host.first_name %></strong></p>
@@ -57,8 +63,28 @@
   </div>
 </div>
 
-
-
-
+<script>
+  var modal = document.getElementById('photoModal');
+  var flag = false;
   
+  $('#photoModal').bind('touchstart click', function(event){
+    if (!flag) {
+      flag = true;
+      setTimeout(function(){ flag = false; }, 100);
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+    return false
+  });
   
+  // Get the image and insert it inside the modal - use its "alt" text as a caption
+  var img = document.getElementById('myImg');
+  var modalImg = document.getElementById("img01");
+  var captionText = document.getElementById("caption");
+  img.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;
+  }
+</script>

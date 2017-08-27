@@ -13,7 +13,7 @@
             </h3>
           </div>
           <% gallery.photos.take(4).each do |photo| %>
-            <%= link_to image_url(photo.image) do %>
+            <%= link_to gallery do %>
               <%= image_tag photo.image, width: 175 %>
             <% end %>
           <% end %>

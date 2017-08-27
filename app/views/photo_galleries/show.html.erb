@@ -5,18 +5,44 @@
         <hr class="h_rule">
         <% @photo_gallery.photos.in_groups_of(3, false) do |group| %>
           <% group.each do |photo| %>
-           <div class="row col-sm-4 center">
-                <div class="img_gallery">
-                    <%= link_to image_url(photo.image) do %>
-                      <%= image_tag photo.image, width: 280 %>
-                    <% end %>
+            <div class="row col-sm-4 center">
+              <div class="img_gallery">
+                <%= image_tag photo.image, :class => 'myImg' + photo.id.to_s, width: 280 %>
+                <div id="photoModal<%= photo.id.to_s %>", class="modal">
+                  <img class="modal-content" id="img<%= photo.id.to_s %>" >
                 </div>
-          </div>
+              </div>
+            </div>
           <% end %>
         <% end %>
-        
          <%= render 'shared/photos_form' %>
-        
         </div> 
     </div>
 </div>
+<script>
+  var flag = false;
+  
+  $('.modal').bind('touchstart click', function(event){
+    console.log("testing")
+      if (!flag) {
+        flag = true;
+        setTimeout(function(){ flag = false; }, 100);
+          if (event.target) {
+              $('.modal').fadeOut()
+          }
+      }
+      return false
+    });
+    
+  // Get the image and insert it inside the modal 
+  var imgArr = $('*[class^="myImg"]');
+  for(var i=0; i<imgArr.length; i++) {
+    imgArr[i].onclick = function(e){
+      var imgId = e.target.className.substring(5)
+      var modalImg = document.getElementById("img" + imgId)
+      var modal = document.getElementById("photoModal"+ imgId);
+      modal.style.display = "block";
+      modalImg.src = this.src;
+    }
+  }
+</script>
